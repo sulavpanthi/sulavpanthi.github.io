@@ -51,13 +51,8 @@
                 </h1>
                 <br/>
 
-                <ul>
-                    
-                        <li><a href="" id="firstProject" title="" target="_blank"><h2 id="firstProjectName"></h2></a></li>
-                        <li><a href="" id="secondProject" title="" target="_blank"><h2 id="secondProjectName"></h2></a></li>
-                        <li><a href="" id="thirdProject" title="" target="_blank"><h2 id="thirdProjectName"></h2></a></li>
-
-                    
+                <ul class="my-list" id='my-ul'>
+                    <!-- github repo list goes here -->
                 </ul>
             </section>
             
@@ -107,47 +102,27 @@
                 console.log(repoData.length)
 
                 for(i=0;i<repoData.length;i++){
-                    // console.log(repoData[i]['html_url'])
                     
-                    if(i==0){
-                        document.getElementById('firstProject').title = repoData[i]['name']
-                        document.getElementById('firstProject').href = repoData[i]['html_url']
-                        document.getElementById('firstProjectName').textContent = repoData[i]['name']
-                    }
-
-                    if(i==1){
-                        document.getElementById('secondProject').title = repoData[i]['name']
-                        document.getElementById('secondProject').href = repoData[i]['html_url']
-                        document.getElementById('secondProjectName').textContent = repoData[i]['name']
-                    }
-
-                    if(i==2){
-                        document.getElementById('thirdProject').title = repoData[i]['name']
-                        document.getElementById('thirdProject').href = repoData[i]['html_url']
-                        document.getElementById('thirdProjectName').textContent = repoData[i]['name']
-                    }   
-                        
-                        
-                        
-                        
-                        
-                        // console.log(repoData[i]['name'])
-                        // console.log(repoData[i]['html_url'])
-
-
+                    var ul = document.getElementById('my-ul');
 
                     
-                    
+                    var a = document.createElement('a');
+                
 
-                    // console.log(repoList[i])
+                    var link = document.createTextNode(repoData[i]['name']);
+
+
+                    a.appendChild(link);
+                    a.setAttribute('href',repoData[i]['html_url']);
+                    a.target = "_blank";
+                    a.title = repoData[i]['name'];
+
+                    // li.appendChild(a);
+
+
+                    ul.appendChild(a); 
                     
                 }
-
-                // console.log(repoData[0].name)
-
-
-                // console.log(repoData[1]['html_url'])
-                // console.log(repoData[2]['html_url'])
 
             })
 
