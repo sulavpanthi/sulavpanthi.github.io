@@ -11,7 +11,7 @@
 
 body::after{
     /* background-image: url('./im') !important; */
-    background-image: url('../images/pencil-bg.jpg');
+    background-image: url('./images/pencil-bg.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
