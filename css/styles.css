@@ -1,0 +1,314 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat=500');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+    
+}
+
+li, a, button{
+    /* font-family: "Montserrat", sans-serif; */
+    font-weight: 700;
+    font-size: 16px;
+    color: black;
+    text-decoration: none;
+}
+
+header{
+    display: flex;
+    justify-content: flex-end;
+    padding: 30px 10% ;
+    align-items: center;
+
+}
+
+.logo{
+
+    width: 5%;
+    height: 5%;
+    border-radius: 50%;
+    margin-right: auto;
+    cursor: pointer;
+}
+
+.nav_links{
+    list-style: none;
+}
+
+.nav_links li{
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.nav_links li a{
+    transition: all 0.3s ease 0s;
+}
+
+.nav_links li a:hover{
+    color: red;
+}
+
+button{
+    margin-left: 20px;
+    padding: 9px 25px;
+    background-color:#E60000;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+button:hover{
+    background-color: rgb(248, 151, 151);
+    
+}
+
+main{
+    /* background-color: blue; */
+    /* display: inline-block; */
+    margin: 10px;
+    margin-top: 0px;
+    height: 200px;
+    /* display: block; */
+
+}
+
+#profileSection{
+    position: relative;
+
+}
+
+main section img{
+    float: left;
+    width: 200px;
+    height: 200px;
+    
+    border-radius: 50%;
+}
+
+.profiling{
+    float: left;
+    
+    /* margin-left: 100px; */
+}
+#profileImg{
+    margin-left: 100px;
+
+}
+
+.profiling h2{
+    float: left;
+    margin-top: 70px;
+    margin-left: 10px;
+    font-size: 2em;
+    
+}
+.profiling p{
+    /* float: left; */
+    margin-top: 70px;
+    margin-left: 10px;
+    /* font-size: 2em; */
+    
+}
+
+.bio{
+    float: right;
+    margin-right: 100px;
+    margin-top: 70px;
+    font-size: 1.3em;
+}
+
+#projectSection{
+    /* background-image: url('mustang.jpg'); */
+    /* display: block; */
+    position: absolute;
+    /* top: 0px; */
+    left:10px;
+    right:10px;
+    top: 420px;
+    font-size: 1.2em;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100px;
+    
+}
+
+#projectSection h1{
+    text-align: center;
+}
+
+#projectSection ul li h2{
+    color: black;
+}
+
+#projectSection ul{
+    background-color: yellow;
+    list-style: none;;
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+    /* text-decoration: none; */
+    /* color: black; */
+}
+
+
+
+#contactSection div{
+    position: absolute;
+    top:550px;
+    text-align: center;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-bottom:50px;
+
+}
+
+.fa {
+    padding: 10px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 5px;
+    border-radius: 50%;
+  }
+
+  .fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook{
+    /* background: #3B5998; */
+    background: rgb(41, 41, 233);
+
+  color: white;
+}
+
+.fa-instagram {
+    background: linear-gradient(to right top, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+    color: white;
+}
+
+.fa-linkedin {
+   background: #007bb5;
+   color: white;
+}
+
+.fa-google {
+    background: #dd4b39;
+    color: white;
+}
+
+@media (max-width:1161px){
+
+    #profileSection{
+        position: relative;
+    }
+    .bio{
+        position: absolute;
+        top:180px;
+        left:100px;
+    }
+
+    #projectSection{
+        top:480px;
+    }
+
+    #contactSection div{
+        top:600px;
+    }
+}
+
+@media (max-width:690px){
+
+    #profileSection img{
+
+        margin-left:39px;
+    }
+
+    .bio{
+        left:50px;
+    }
+
+    #projectSection{
+        top:510px;
+    }
+
+    #projectSection ul{
+        display: block;
+        text-align: center;
+        padding: 20px 0px 20px;
+    }
+
+    #projectSection ul li{
+        margin:20px;
+        list-style: none;
+    }
+
+    #contactSection div{
+        top:800px;
+    }
+}
+
+@media (max-width:529px){
+    #projectSection{
+        margin-top:20px;
+    }
+
+    #contactSection div{
+        top:815px;
+    }
+}
+
+@media (max-width:509px){
+
+
+    .profiling{
+        position: absolute;
+        top:150px;
+        left: 50px;;
+    }
+
+    .bio{
+        position: absolute;
+        top:235px;
+        left:65px;
+    }
+
+    #projectSection{
+        margin-top:79px;
+    }
+
+    #contactSection div{
+        
+        top:890px;
+        width: 100%;
+        
+    }
+}
+
+@media (max-width:422px){
+    .nav_links li{
+        padding: 0px 10px;
+    }
+
+    #projectSection{
+        margin-top:90px;
+    }
+}
+
+@media(max-width:370px){
+    .nav_links li{
+        padding: 0px 5px;
+    }
+
+    #projectSection{
+        margin-top:105px;
+    }
+    #contactSection div{
+        top:910px;
+    }
+}

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+    <title>Sulav Panthi</title>
+</head>
+<body>
+    <div id="loading" style="text-align: center;">
+
+        <img src="./images/Spinner-1s-200px.gif">
+    </div>
+    <div id="mainContainer" hidden>
+        <header class="navv">
+            <img class="logo" src="images/logo4.png" alt="Logo Image">
+            <nav>
+                <ul class="nav_links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#projectSection">Projects</a></li>
+                    <!-- <li><a href="#">Connect</a></li> -->
+                </ul>
+            </nav>
+            <a class="cta" href="tel:+9779847011558"><button style="color: white;">Contact</button></a>
+        </header>
+        <main>
+
+            <section id="profileSection">
+                <img src="" alt="" id="profileImg">
+
+                <div class="profiling">
+                    <h2 id="userName"></h2>
+
+                    <p>
+                        Check my <a href="" id="githubLink" target="_blank" rel="nofollow">Github</a>
+                    </p>
+                </div>
+
+                <div class="bio">
+                    <p id="bio"></p>
+                    <h5 id="followers"></h5>
+                </div>
+                
+                
+            </section>
+            <!-- <br/> -->
+            <section id="projectSection">
+                <h1>
+                    My Projects
+                </h1>
+                <br/>
+
+                <ul>
+                    
+                        <li><a href="" id="firstProject" title="" target="_blank"><h2 id="firstProjectName"></h2></a></li>
+                        <li><a href="" id="secondProject" title="" target="_blank"><h2 id="secondProjectName"></h2></a></li>
+                        <li><a href="" id="thirdProject" title="" target="_blank"><h2 id="thirdProjectName"></h2></a></li>
+
+                    
+                </ul>
+            </section>
+            
+
+           
+            <br/>
+            <section id="contactSection">
+                <div>
+                    <h1>Connect me on:</h1>
+                    <br/>
+                    <a href="https://www.facebook.com/sulav.panthi/" target="_blank" rel="nofollow" class="fa fa-facebook"></a>
+                    <a href="https://www.instagram.com/sulav_panthi/" target="_blank" rel="nofollow" class="fa fa-instagram"></a>
+                    <a href="https://www.linkedin.com/in/sulav-panthi-b96010139/" target="_blank" rel="nofollow" class="fa fa-linkedin"></a>
+                    <a href="mailto:panthisulav4@gmail.com" class="fa fa-google" target="_blank" rel="nofollow"></a>
+
+                </div>
+                
+            </section>
+
+            
+            
+        </main>
+    </div>
+
+    <script>
+        fetch("https://api.github.com/users/sulavpanthi")
+        .then(response => response.json())
+        .then(function(data){
+            // console.log(data)
+
+            let followersCount = data['followers']
+            let followersInfo = `I have been followed by ${followersCount} people on Github.`
+
+            document.getElementById('profileImg').src = data['avatar_url']
+            document.getElementById('userName').textContent = data['name']
+            document.getElementById('bio').textContent = data['bio']
+            document.getElementById('followers').textContent = followersInfo
+
+            document.getElementById('githubLink').href = data['html_url']
+
+
+
+
+            fetch("https://api.github.com/users/sulavpanthi/repos")
+            .then(response => response.json())
+            .then(function(repoData){
+                console.log(repoData.length)
+
+                for(i=0;i<repoData.length;i++){
+                    // console.log(repoData[i]['html_url'])
+                    
+                    if(i==0){
+                        document.getElementById('firstProject').title = repoData[i]['name']
+                        document.getElementById('firstProject').href = repoData[i]['html_url']
+                        document.getElementById('firstProjectName').textContent = repoData[i]['name']
+                    }
+
+                    if(i==1){
+                        document.getElementById('secondProject').title = repoData[i]['name']
+                        document.getElementById('secondProject').href = repoData[i]['html_url']
+                        document.getElementById('secondProjectName').textContent = repoData[i]['name']
+                    }
+
+                    if(i==2){
+                        document.getElementById('thirdProject').title = repoData[i]['name']
+                        document.getElementById('thirdProject').href = repoData[i]['html_url']
+                        document.getElementById('thirdProjectName').textContent = repoData[i]['name']
+                    }   
+                        
+                        
+                        
+                        
+                        
+                        // console.log(repoData[i]['name'])
+                        // console.log(repoData[i]['html_url'])
+
+
+
+                    
+                    
+
+                    // console.log(repoList[i])
+                    
+                }
+
+                // console.log(repoData[0].name)
+
+
+                // console.log(repoData[1]['html_url'])
+                // console.log(repoData[2]['html_url'])
+
+            })
+
+
+
+            document.getElementById('mainContainer').hidden = false
+            document.getElementById('loading').hidden = true
+
+
+
+
+
+
+        })
+
+    </script>
+</body>
+</html>
